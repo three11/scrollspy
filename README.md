@@ -41,15 +41,6 @@ const scrollSpy = new ScrollSpy();
 The default settings are:
 
 ```
-element       : '.js-infinite',       // The container of the instance
-next          : '.js-infinite__next', // The link to the next page
-item          : '.js-infinite__item', // The item
-disabledClass : 'disabled',           // Disabled class name
-hiddenClass   : 'hidden',             // Hidden class name
-responseType  : 'text/html',          // Type of the AJAX response
-```
-
-```
 linkCurrentClass      : 'current', // The class that will be applied to the current element
 linksContainerSelector: '.js-scroll-spy-nav', // The container of the scroll spy navigation
 sectionSelector       : '.js-scroll-spy-section', // The selector for the sections that will be monitored
