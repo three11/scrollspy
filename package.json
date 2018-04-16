@@ -1,0 +1,57 @@
+{
+	"name": "@three11/scrollspy",
+	"version": "0.0.1",
+	"description": "Vanilla ES2017 module for scroll spy",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "webpack"
+	},
+	"dependencies": {
+		"@three11/animate-top-offset": "^0.3.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/three11/scrollspy.git"
+	},
+	"keywords": [
+		"Infinite",
+		"Scroll",
+		"AJAX",
+		"Load",
+		"More",
+		"JS",
+		"ES2017"
+	],
+	"authors": [
+		{
+			"name": "Three 11 Ltd",
+			"email": "contact.three11@gmail.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Alexander Panayotov",
+			"email": "alexander.panayotov@gmail.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Atanas Atanasov",
+			"email": "scriptex.bg@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/three11/scrollspy/issues"
+	},
+	"homepage": "https://github.com/three11/scrollspy#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.0.0-beta.44",
+		"@babel/core": "^7.0.0-beta.44",
+		"@babel/preset-env": "^7.0.0-beta.44",
+		"@babel/preset-stage-2": "^7.0.0-beta.44",
+		"babel-loader": "^8.0.0-beta",
+		"unminified-webpack-plugin": "^2.0.0",
+		"webpack": "^4.5.0",
+		"webpack-cli": "^2.0.14"
+	}
+}
