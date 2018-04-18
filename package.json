@@ -1,6 +1,6 @@
 {
 	"name": "@three11/scrollspy",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Vanilla ES2017 module for scroll spy",
 	"main": "dist/index.js",
 	"scripts": {
@@ -13,15 +13,7 @@
 		"type": "git",
 		"url": "git+https://github.com/three11/scrollspy.git"
 	},
-	"keywords": [
-		"Infinite",
-		"Scroll",
-		"AJAX",
-		"Load",
-		"More",
-		"JS",
-		"ES2017"
-	],
+	"keywords": ["Spy", "Scroll", "JS", "ES2017"],
 	"authors": [
 		{
 			"name": "Three 11 Ltd",
