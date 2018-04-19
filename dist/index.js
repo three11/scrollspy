@@ -435,6 +435,7 @@ function () {
    * Create an instance
    *
    * @param  {Object} settings
+   *
    * @return {Object} ScrollSpy instance
    */
   function ScrollSpy() {
@@ -459,6 +460,7 @@ function () {
    * Initialize the plugin
    *
    * @param  {Object} options
+   *
    * @return {Void}
    */
 
@@ -475,9 +477,9 @@ function () {
       this.bindEvents();
     }
     /**
-     * Set plugins properties
+     * Set plugin's properties
      *
-     * @param {Void}
+     * @return {Void}
      */
 
   }, {
@@ -533,7 +535,8 @@ function () {
     /**
      * Get the top offset of a section
      *
-     * @param  {<DOM Element>Object} sectio
+     * @param  {<DOM Element>Object} section
+     *
      * @return {Number}
      */
 
@@ -584,7 +587,7 @@ function () {
       this.links[this.currentIdx].parentNode.classList.add(this.linkCurrentClass);
     }
     /**
-     * Scroll to the current secction
+     * Scroll to the current section
      *
      * @return {Void}
      */

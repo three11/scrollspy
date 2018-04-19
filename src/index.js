@@ -11,6 +11,7 @@ export default class ScrollSpy {
 	 * Create an instance
 	 *
 	 * @param  {Object} settings
+	 *
 	 * @return {Object} ScrollSpy instance
 	 */
 	constructor(settings = {}) {
@@ -35,6 +36,7 @@ export default class ScrollSpy {
 	 * Initialize the plugin
 	 *
 	 * @param  {Object} options
+	 *
 	 * @return {Void}
 	 */
 	init(options) {
@@ -49,9 +51,9 @@ export default class ScrollSpy {
 	}
 
 	/**
-	 * Set plugins properties
+	 * Set plugin's properties
 	 *
-	 * @param {Void}
+	 * @return {Void}
 	 */
 	setProperties(options) {
 		const doc = document;
@@ -98,7 +100,8 @@ export default class ScrollSpy {
 	/**
 	 * Get the top offset of a section
 	 *
-	 * @param  {<DOM Element>Object} sectio
+	 * @param  {<DOM Element>Object} section
+	 *
 	 * @return {Number}
 	 */
 	getSectionOffset(section) {
@@ -150,7 +153,7 @@ export default class ScrollSpy {
 	}
 
 	/**
-	 * Scroll to the current secction
+	 * Scroll to the current section
 	 *
 	 * @return {Void}
 	 */
