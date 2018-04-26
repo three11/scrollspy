@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/dt/@three11/scrollspy.svg)](https://www.npmjs.com/package/@three11/scrollspy)
+
 # ScrollSpy
 
 A vanilla ES2017 module for scroll spy functionality.
