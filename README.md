@@ -12,7 +12,7 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/scrollspy/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/scrollspy/graphs/commit-activity)
 
-[![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/)
+[![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/) [![Greenkeeper badge](https://badges.greenkeeper.io/three11/scrollspy.svg)](https://greenkeeper.io/)
 
 # ScrollSpy
 
