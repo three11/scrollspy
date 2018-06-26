@@ -1,7 +1,7 @@
 /**
  * The external dependencies.
  */
-import { animateTopOffset } from '@three11/animate-top-offset';
+import animateTopOffset from '@three11/animate-top-offset';
 
 /**
  * ScrollSpy
