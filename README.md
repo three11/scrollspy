@@ -4,6 +4,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/three11/scrollspy.svg)](https://github.com/three11/scrollspy/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/three11/scrollspy.svg)](https://github.com/three11/scrollspy/commits/master)
 [![Github file size](https://img.shields.io/github/size/three11/scrollspy/dist/index.min.js.svg)](https://github.com/three11/scrollspy/)
+[![Build Status](https://travis-ci.org/three11/scrollspy.svg?branch=master)](https://travis-ci.org/three11/scrollspy)
 [![npm](https://img.shields.io/npm/dt/@three11/scrollspy.svg)](https://www.npmjs.com/package/@three11/scrollspy)
 [![npm](https://img.shields.io/npm/v/@three11/scrollspy.svg)](https://www.npmjs.com/package/@three11/scrollspy)
 [![license](https://img.shields.io/github/license/three11/scrollspy.svg)](https://github.com/three11/scrollspy)
