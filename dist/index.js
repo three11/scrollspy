@@ -379,7 +379,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _animateTopOffset = __webpack_require__(0);
+var _animateTopOffset = _interopRequireDefault(__webpack_require__(0));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -569,7 +571,7 @@ function () {
   }, {
     key: "scrollToCurrentSection",
     value: function scrollToCurrentSection() {
-      (0, _animateTopOffset.animateTopOffset)(this.data.offsets[this.currentIdx]);
+      (0, _animateTopOffset.default)(this.data.offsets[this.currentIdx]);
     }
     /**
      * Bind the events
