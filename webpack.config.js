@@ -2,9 +2,9 @@ const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 module.exports = {
 	mode: 'production',
-	entry: './src/index.js',
+	entry: './src/scrollspy.js',
 	output: {
-		filename: 'index.min.js',
+		filename: 'scrollspy.min.js',
 		library: 'InfiniteScroll',
 		libraryTarget: 'umd',
 		libraryExport: 'default'
