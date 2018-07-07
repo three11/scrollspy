@@ -12,6 +12,8 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/scrollspy/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/scrollspy/graphs/commit-activity)
 [![Greenkeeper badge](https://badges.greenkeeper.io/three11/scrollspy.svg)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/three11/scrollspy/status.svg)](https://david-dm.org/three11/scrollspy)
+[![devDependencies Status](https://david-dm.org/three11/scrollspy/dev-status.svg)](https://david-dm.org/three11/scrollspy?type=dev)
 
 [![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/)
 
@@ -21,13 +23,13 @@ A vanilla ES2017 module for scroll spy functionality.
 
 ## Install
 
-```console
+```sh
 npm i @three11/scrollspy
 ```
 
 or
 
-```console
+```sh
 yarn add @three11/scrollspy
 ```
 
@@ -36,7 +38,15 @@ or
 Just download this repository and link the files located in dist folder:
 
 ```html
-<script src="dist/index.min.js"></script>
+<script src="path-to-scrollspy/dist/scrollspy.min.js"></script>
+```
+
+or
+
+Include it from Unpkg CDN
+
+```html
+<script src="//unpkg.com/@three11/scrollspy/dist/scrollspy.min.js"></script>
 ```
 
 ## Usage
