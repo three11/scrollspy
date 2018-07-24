@@ -1,5 +1,3 @@
-[![GitHub stars](https://img.shields.io/github/stars/three11/scrollspy.svg?style=social&label=Stars)](https://github.com/three11/scrollspy)
-[![GitHub forks](https://img.shields.io/github/forks/three11/scrollspy.svg?style=social&label=Fork)](https://github.com/three11/scrollspy/network#fork-destination-box)
 [![GitHub release](https://img.shields.io/github/release/three11/scrollspy.svg)](https://github.com/three11/scrollspy/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/three11/scrollspy.svg)](https://github.com/three11/scrollspy/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/three11/scrollspy.svg)](https://github.com/three11/scrollspy/commits/master)
@@ -7,15 +5,10 @@
 [![Build Status](https://travis-ci.org/three11/scrollspy.svg?branch=master)](https://travis-ci.org/three11/scrollspy)
 [![npm](https://img.shields.io/npm/dt/@three11/scrollspy.svg)](https://www.npmjs.com/package/@three11/scrollspy)
 [![npm](https://img.shields.io/npm/v/@three11/scrollspy.svg)](https://www.npmjs.com/package/@three11/scrollspy)
-[![license](https://img.shields.io/github/license/three11/scrollspy.svg)](https://github.com/three11/scrollspy)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/three11/scrollspy/README.md)](https://github.com/three11/scrollspy/)
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/scrollspy/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/scrollspy/graphs/commit-activity)
 [![Greenkeeper badge](https://badges.greenkeeper.io/three11/scrollspy.svg)](https://greenkeeper.io/)
 [![dependencies Status](https://david-dm.org/three11/scrollspy/status.svg)](https://david-dm.org/three11/scrollspy)
 [![devDependencies Status](https://david-dm.org/three11/scrollspy/dev-status.svg)](https://david-dm.org/three11/scrollspy?type=dev)
-
-[![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/)
 
 # ScrollSpy
 
