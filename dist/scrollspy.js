@@ -91,11 +91,255 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else { var mod; }
+})(this, function (_exports, _animateTopOffset) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  _animateTopOffset = _interopRequireDefault(_animateTopOffset);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+  function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+  function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+  function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  /**
+   * ScrollSpy
+   */
+  var ScrollSpy =
+  /*#__PURE__*/
+  function () {
+    /**
+     * Create an instance
+     *
+     * @param  {Object} settings
+     *
+     * @return {Object} ScrollSpy instance
+     */
+    function ScrollSpy() {
+      var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      _classCallCheck(this, ScrollSpy);
+
+      var options = _objectSpread({
+        linkCurrentClass: 'current',
+        linksContainerSelector: '.js-scroll-spy-nav',
+        sectionSelector: '.js-scroll-spy-section',
+        headerOffset: true,
+        headerClass: '.c-header'
+      }, settings);
+
+      this.init(options);
+      window.addEventListener('load', this.refreshPositions.bind(this));
+      window.addEventListener('resize', this.refreshPositions.bind(this));
+      return this;
+    }
+    /**
+     * Initialize the plugin
+     *
+     * @param  {Object} options
+     *
+     * @return {Void}
+     */
+
+
+    _createClass(ScrollSpy, [{
+      key: "init",
+      value: function init(options) {
+        // Prepare properties
+        this.setProperties(options); // Fire up plugin
+
+        this.getSectionData();
+        this.getCurrentSectionIndex();
+        this.setCurrentState();
+        this.bindEvents();
+      }
+      /**
+       * Set plugin's properties
+       *
+       * @return {Void}
+       */
+
+    }, {
+      key: "setProperties",
+      value: function setProperties(options) {
+        var doc = document;
+        this.linksContainerSelector = options.linksContainerSelector;
+        this.sectionSelector = options.sectionSelector;
+        this.linksContainer = doc.querySelector(this.linksContainerSelector);
+        this.links = _toConsumableArray(this.linksContainer.querySelectorAll('a'));
+        this.sections = _toConsumableArray(doc.querySelectorAll(this.sectionSelector));
+        this.headerOffset = options.headerOffset;
+        this.headerClass = options.headerClass;
+        this.linkCurrentClass = options.linkCurrentClass;
+        this.currentIdx = 0;
+        this.data = {
+          offsets: [],
+          ids: []
+        };
+      }
+      /**
+       * Prepare the data for the sections
+       *
+       * @return {Void}
+       */
+
+    }, {
+      key: "getSectionData",
+      value: function getSectionData() {
+        var _this = this;
+
+        this.sections.forEach(function (section) {
+          _this.data.ids.push(section.getAttribute('id'));
+
+          _this.data.offsets.push(_this.getSectionOffset(section));
+        });
+      }
+      /**
+       * Update the data for the sections
+       *
+       * @return {Void}
+       */
+
+    }, {
+      key: "refreshPositions",
+      value: function refreshPositions() {
+        var _this2 = this;
+
+        this.data.offsets = this.data.offsets.map(function (offset, index) {
+          return _this2.getSectionOffset(_this2.sections[index]);
+        });
+      }
+      /**
+       * Get the top offset of a section
+       *
+       * @param  {<DOM Element>Object} section
+       *
+       * @return {Number}
+       */
+
+    }, {
+      key: "getSectionOffset",
+      value: function getSectionOffset(section) {
+        if (!this.headerOffset) {
+          return section.offsetTop;
+        }
+
+        return section.offsetTop - document.querySelector(this.headerClass).offsetHeight;
+      }
+      /**
+       * Find the index of the current section
+       *
+       * @return {Void}
+       */
+
+    }, {
+      key: "getCurrentSectionIndex",
+      value: function getCurrentSectionIndex() {
+        var _this3 = this;
+
+        var scrollTop = window.pageYOffset;
+        this.data.offsets.forEach(function (offset, index) {
+          var nextOffset = _this3.data.offsets[index + 1];
+
+          if (scrollTop >= offset && scrollTop < nextOffset || scrollTop >= offset && typeof nextOffset === 'undefined') {
+            _this3.currentIdx = index;
+          }
+        });
+        this.setCurrentState();
+      }
+      /**
+       * Set classes to the appropriate nav item
+       *
+       * @return {Void}
+       */
+
+    }, {
+      key: "setCurrentState",
+      value: function setCurrentState() {
+        var _this4 = this;
+
+        document.querySelector(this.linksContainerSelector).querySelectorAll(".".concat(this.linkCurrentClass)).forEach(function (item) {
+          return item.classList.remove(_this4.linkCurrentClass);
+        });
+        this.links[this.currentIdx].parentNode.classList.add(this.linkCurrentClass);
+      }
+      /**
+       * Scroll to the current section
+       *
+       * @return {Void}
+       */
+
+    }, {
+      key: "scrollToCurrentSection",
+      value: function scrollToCurrentSection() {
+        (0, _animateTopOffset.default)(this.data.offsets[this.currentIdx]);
+      }
+      /**
+       * Bind the events
+       *
+       * @return {Void}
+       */
+
+    }, {
+      key: "bindEvents",
+      value: function bindEvents() {
+        var _this5 = this;
+
+        var win = window;
+        this.links.forEach(function (link, index) {
+          link.addEventListener('click', function (event) {
+            event.preventDefault();
+            _this5.currentIdx = index;
+
+            _this5.scrollToCurrentSection();
+          });
+        });
+        win.addEventListener('scroll', function (event) {
+          _this5.getCurrentSectionIndex();
+        });
+      }
+    }]);
+
+    return ScrollSpy;
+  }();
+
+  _exports.default = ScrollSpy;
+});
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -415,248 +659,9 @@ return /******/ (function(modules) { // webpackBootstrap
       var _default = animateTopOffset;
       exports.default = _default;
       /***/
-    }]
-    /******/
-    )["default"]
+    }])["default"]
   );
 });
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _animateTopOffset = _interopRequireDefault(__webpack_require__(0));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-/**
- * ScrollSpy
- */
-var ScrollSpy =
-/*#__PURE__*/
-function () {
-  /**
-   * Create an instance
-   *
-   * @param  {Object} settings
-   *
-   * @return {Object} ScrollSpy instance
-   */
-  function ScrollSpy() {
-    var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-    _classCallCheck(this, ScrollSpy);
-
-    var options = _objectSpread({
-      linkCurrentClass: 'current',
-      linksContainerSelector: '.js-scroll-spy-nav',
-      sectionSelector: '.js-scroll-spy-section',
-      headerOffset: true,
-      headerClass: '.c-header'
-    }, settings);
-
-    this.init(options);
-    window.addEventListener('load', this.refreshPositions.bind(this));
-    window.addEventListener('resize', this.refreshPositions.bind(this));
-    return this;
-  }
-  /**
-   * Initialize the plugin
-   *
-   * @param  {Object} options
-   *
-   * @return {Void}
-   */
-
-
-  _createClass(ScrollSpy, [{
-    key: "init",
-    value: function init(options) {
-      // Prepare properties
-      this.setProperties(options); // Fire up plugin
-
-      this.getSectionData();
-      this.getCurrentSectionIndex();
-      this.setCurrentState();
-      this.bindEvents();
-    }
-    /**
-     * Set plugin's properties
-     *
-     * @return {Void}
-     */
-
-  }, {
-    key: "setProperties",
-    value: function setProperties(options) {
-      var doc = document;
-      this.linksContainerSelector = options.linksContainerSelector;
-      this.sectionSelector = options.sectionSelector;
-      this.linksContainer = doc.querySelector(this.linksContainerSelector);
-      this.links = _toConsumableArray(this.linksContainer.querySelectorAll('a'));
-      this.sections = _toConsumableArray(doc.querySelectorAll(this.sectionSelector));
-      this.headerOffset = options.headerOffset;
-      this.headerClass = options.headerClass;
-      this.linkCurrentClass = options.linkCurrentClass;
-      this.currentIdx = 0;
-      this.data = {
-        offsets: [],
-        ids: []
-      };
-    }
-    /**
-     * Prepare the data for the sections
-     *
-     * @return {Void}
-     */
-
-  }, {
-    key: "getSectionData",
-    value: function getSectionData() {
-      var _this = this;
-
-      this.sections.forEach(function (section) {
-        _this.data.ids.push(section.getAttribute('id'));
-
-        _this.data.offsets.push(_this.getSectionOffset(section));
-      });
-    }
-    /**
-     * Update the data for the sections
-     *
-     * @return {Void}
-     */
-
-  }, {
-    key: "refreshPositions",
-    value: function refreshPositions() {
-      var _this2 = this;
-
-      this.data.offsets = this.data.offsets.map(function (offset, index) {
-        return _this2.getSectionOffset(_this2.sections[index]);
-      });
-    }
-    /**
-     * Get the top offset of a section
-     *
-     * @param  {<DOM Element>Object} section
-     *
-     * @return {Number}
-     */
-
-  }, {
-    key: "getSectionOffset",
-    value: function getSectionOffset(section) {
-      if (!this.headerOffset) {
-        return section.offsetTop;
-      }
-
-      return section.offsetTop - document.querySelector(this.headerClass).offsetHeight;
-    }
-    /**
-     * Find the index of the current section
-     *
-     * @return {Void}
-     */
-
-  }, {
-    key: "getCurrentSectionIndex",
-    value: function getCurrentSectionIndex() {
-      var _this3 = this;
-
-      var scrollTop = window.pageYOffset;
-      this.data.offsets.forEach(function (offset, index) {
-        var nextOffset = _this3.data.offsets[index + 1];
-
-        if (scrollTop >= offset && scrollTop < nextOffset || scrollTop >= offset && typeof nextOffset === 'undefined') {
-          _this3.currentIdx = index;
-        }
-      });
-      this.setCurrentState();
-    }
-    /**
-     * Set classes to the appropriate nav item
-     *
-     * @return {Void}
-     */
-
-  }, {
-    key: "setCurrentState",
-    value: function setCurrentState() {
-      var _this4 = this;
-
-      document.querySelector(this.linksContainerSelector).querySelectorAll(".".concat(this.linkCurrentClass)).forEach(function (item) {
-        return item.classList.remove(_this4.linkCurrentClass);
-      });
-      this.links[this.currentIdx].parentNode.classList.add(this.linkCurrentClass);
-    }
-    /**
-     * Scroll to the current section
-     *
-     * @return {Void}
-     */
-
-  }, {
-    key: "scrollToCurrentSection",
-    value: function scrollToCurrentSection() {
-      (0, _animateTopOffset.default)(this.data.offsets[this.currentIdx]);
-    }
-    /**
-     * Bind the events
-     *
-     * @return {Void}
-     */
-
-  }, {
-    key: "bindEvents",
-    value: function bindEvents() {
-      var _this5 = this;
-
-      var win = window;
-      this.links.forEach(function (link, index) {
-        link.addEventListener('click', function (event) {
-          event.preventDefault();
-          _this5.currentIdx = index;
-
-          _this5.scrollToCurrentSection();
-        });
-      });
-      win.addEventListener('scroll', function (event) {
-        _this5.getCurrentSectionIndex();
-      });
-    }
-  }]);
-
-  return ScrollSpy;
-}();
-
-exports.default = ScrollSpy;
 
 /***/ })
 /******/ ])["default"];
