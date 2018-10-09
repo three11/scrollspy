@@ -7,7 +7,7 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@three11/animate-top-offset": "^0.5.0"
+    "@three11/animate-top-offset": "^0.6.0"
   },
   "repository": {
     "type": "git",
