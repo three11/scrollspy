@@ -34,4 +34,6 @@ Thumbs.db
 yarn.lock
 
 # Config
+renovate.json
+rollup.config.js
 webpack.config.js

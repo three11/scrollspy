@@ -1,13 +1,13 @@
 {
   "name": "@three11/scrollspy",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Vanilla ES2017 module for scroll spy",
-  "main": "dist/scrollspy.js",
+  "main": "dist/scrollspy.min.js",
   "scripts": {
-    "build": "webpack"
+    "build": "rollup -c"
   },
   "dependencies": {
-    "@three11/animate-top-offset": "^0.5.0"
+    "@three11/animate-top-offset": "^0.6.1"
   },
   "repository": {
     "type": "git",
@@ -44,19 +44,11 @@
   "devDependencies": {
     "@babel/cli": "7.1.2",
     "@babel/core": "7.1.2",
-    "@babel/plugin-proposal-class-properties": "7.1.0",
-    "@babel/plugin-proposal-decorators": "7.1.2",
-    "@babel/plugin-proposal-export-namespace-from": "7.0.0",
-    "@babel/plugin-proposal-function-sent": "7.1.0",
-    "@babel/plugin-proposal-json-strings": "7.0.0",
-    "@babel/plugin-proposal-numeric-separator": "7.0.0",
-    "@babel/plugin-proposal-throw-expressions": "7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "7.0.0",
-    "@babel/plugin-syntax-import-meta": "7.0.0",
     "@babel/preset-env": "7.1.0",
-    "babel-loader": "8.0.4",
-    "unminified-webpack-plugin": "2.0.0",
-    "webpack-cli": "3.1.2",
-    "webpack": "4.20.2"
+    "rollup": "0.66.5",
+    "rollup-plugin-babel": "4.0.3",
+    "rollup-plugin-commonjs": "9.1.8",
+    "rollup-plugin-node-resolve": "3.4.0",
+    "rollup-plugin-uglify": "6.0.0"
   }
 }
