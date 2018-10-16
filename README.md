@@ -66,6 +66,10 @@ headerOffset          : true, // Should calculate the header height
 headerClass           : '.c-header', // The class of the header element
 ```
 
+## Demo
+
+A minimal demo is available [here](https://github.com/three11/scrollspy/blob/master/demo/index.html)
+
 ## License
 
 GNU GENERAL PUBLIC LICENSE
