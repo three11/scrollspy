@@ -6,7 +6,6 @@
 [![npm](https://img.shields.io/npm/dt/@three11/scrollspy.svg)](https://www.npmjs.com/package/@three11/scrollspy)
 [![npm](https://img.shields.io/npm/v/@three11/scrollspy.svg)](https://www.npmjs.com/package/@three11/scrollspy)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/three11/scrollspy/README.md)](https://github.com/three11/scrollspy/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/three11/scrollspy.svg)](https://greenkeeper.io/)
 
 # ScrollSpy
 
