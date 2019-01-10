@@ -1,54 +1,54 @@
 {
-  "name": "@three11/scrollspy",
-  "version": "0.3.0",
-  "description": "Vanilla ES2017 module for scroll spy",
-  "main": "dist/scrollspy.min.js",
-  "scripts": {
-    "build": "rollup -c"
-  },
-  "dependencies": {
-    "@three11/animate-top-offset": "^0.6.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/three11/scrollspy.git"
-  },
-  "keywords": [
-    "Spy",
-    "Scroll",
-    "JS",
-    "ES2017"
-  ],
-  "authors": [
-    {
-      "name": "Three 11 Ltd",
-      "email": "hello@three-11.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Alexander Panayotov",
-      "email": "alexander.panayotov@gmail.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Atanas Atanasov",
-      "email": "scriptex.bg@gmail.com",
-      "role": "Developer"
-    }
-  ],
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/three11/scrollspy/issues"
-  },
-  "homepage": "https://github.com/three11/scrollspy#readme",
-  "devDependencies": {
-    "@babel/cli": "7.2.3",
-    "@babel/core": "7.2.2",
-    "@babel/preset-env": "7.2.3",
-    "rollup": "1.0.2",
-    "rollup-plugin-babel": "4.2.0",
-    "rollup-plugin-commonjs": "9.2.0",
-    "rollup-plugin-node-resolve": "4.0.0",
-    "rollup-plugin-uglify": "6.0.0"
-  }
+	"name": "@three11/scrollspy",
+	"version": "0.4.0",
+	"description": "Vanilla ES2017 module for scroll spy",
+	"main": "dist/scrollspy.min.js",
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"dependencies": {
+		"@three11/animate-top-offset": "^0.6.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/three11/scrollspy.git"
+	},
+	"keywords": [
+		"Spy",
+		"Scroll",
+		"JS",
+		"ES2017"
+	],
+	"authors": [
+		{
+			"name": "Three 11 Ltd",
+			"email": "hello@three-11.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Alexander Panayotov",
+			"email": "alexander.panayotov@gmail.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Atanas Atanasov",
+			"email": "scriptex.bg@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/three11/scrollspy/issues"
+	},
+	"homepage": "https://github.com/three11/scrollspy#readme",
+	"devDependencies": {
+		"@babel/cli": "7.2.3",
+		"@babel/core": "7.2.2",
+		"@babel/preset-env": "7.2.3",
+		"rollup": "1.0.2",
+		"rollup-plugin-babel": "4.2.0",
+		"rollup-plugin-commonjs": "9.2.0",
+		"rollup-plugin-node-resolve": "4.0.0",
+		"rollup-plugin-uglify": "6.0.0"
+	}
 }
