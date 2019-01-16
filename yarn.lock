@@ -698,10 +698,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@three11/animate-top-offset@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@three11/animate-top-offset/-/animate-top-offset-0.6.1.tgz#ddd56c6b531aa57bcd922019dfdb4391dc3e61f9"
-  integrity sha512-v9LrUx/5Jngx/4K/Upn3br9Ic/DE03A0lrMIsfnigjhdLRJ9czwdsqMuWc+i06wOJGVI0Lv6kPyTW545IeM0Rg==
+"@three11/animate-top-offset@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@three11/animate-top-offset/-/animate-top-offset-0.7.0.tgz#d1f9a769e822e0c058592e4daf1534b2797874ba"
+  integrity sha512-xUYPlPuXbsiwBSYII9rRmuw7cPy5EZa53ClnrjzAo5+hOsSMMBha8NMB38Ou2h3BHk1xHept5ZX8udWENgpsiA==
 
 "@types/estree@0.0.39":
   version "0.0.39"
