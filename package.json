@@ -45,7 +45,7 @@
 		"@babel/cli": "7.2.3",
     "@babel/core": "7.4.0",
     "@babel/preset-env": "7.4.2",
-    "rollup": "1.7.3",
+    "rollup": "1.7.4",
 		"rollup-plugin-babel": "4.3.2",
 		"rollup-plugin-commonjs": "9.2.2",
 		"rollup-plugin-node-resolve": "4.0.1",
