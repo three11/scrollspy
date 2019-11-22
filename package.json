@@ -42,9 +42,9 @@
 	},
 	"homepage": "https://github.com/three11/scrollspy#readme",
 	"devDependencies": {
-		"@babel/cli": "7.7.0",
-		"@babel/core": "7.7.2",
-		"@babel/preset-env": "7.7.1",
+		"@babel/cli": "7.7.4",
+		"@babel/core": "7.7.4",
+		"@babel/preset-env": "7.7.4",
 		"rollup": "1.27.4",
 		"rollup-plugin-babel": "4.3.3",
 		"rollup-plugin-commonjs": "10.1.0",
