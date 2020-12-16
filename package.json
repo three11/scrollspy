@@ -44,7 +44,7 @@
 	"devDependencies": {
 		"@babel/cli": "7.12.10",
 		"@babel/core": "7.12.10",
-		"@babel/preset-env": "7.12.10",
+		"@babel/preset-env": "7.12.11",
 		"rollup": "2.35.1",
 		"rollup-plugin-babel": "4.4.0",
 		"rollup-plugin-commonjs": "10.1.0",
