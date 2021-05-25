@@ -901,10 +901,10 @@
     readdirp "^2.2.1"
     upath "^1.1.1"
 
-"@three11/animate-top-offset@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@three11/animate-top-offset/-/animate-top-offset-0.7.0.tgz#d1f9a769e822e0c058592e4daf1534b2797874ba"
-  integrity sha512-xUYPlPuXbsiwBSYII9rRmuw7cPy5EZa53ClnrjzAo5+hOsSMMBha8NMB38Ou2h3BHk1xHept5ZX8udWENgpsiA==
+"@three11/animate-top-offset@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@three11/animate-top-offset/-/animate-top-offset-1.0.0.tgz#1d1918c2e5e9869598ed09ffa9493c15f8d562ad"
+  integrity sha512-nhWoV2IT4cyUhRy2nLclzUwvLsdsGRfVbmEE0Dqc9sY3BbpMwPX2mHORwhJY4lkNzso+0Sm7QStJErkrheqrUg==
 
 "@types/estree@*":
   version "0.0.47"
