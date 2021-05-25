@@ -109,10 +109,7 @@ export default class ScrollSpy {
 			return section.offsetTop;
 		}
 
-		return (
-			section.offsetTop -
-			document.querySelector(this.headerClass).offsetHeight
-		);
+		return section.offsetTop - document.querySelector(this.headerClass).offsetHeight;
 	}
 
 	/**
@@ -147,9 +144,7 @@ export default class ScrollSpy {
 			.querySelectorAll(`.${this.linkCurrentClass}`)
 			.forEach(item => item.classList.remove(this.linkCurrentClass));
 
-		this.links[this.currentIdx].parentNode.classList.add(
-			this.linkCurrentClass
-		);
+		this.links[this.currentIdx].parentNode.classList.add(this.linkCurrentClass);
 	}
 
 	/**

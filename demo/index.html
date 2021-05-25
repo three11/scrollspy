@@ -1,127 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ScrollSpy Demo</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>ScrollSpy Demo</title>
+		<style>
+			body {
+				font-family: monospace;
+				font-size: 1rem;
+				line-height: 1.25;
+				margin: 0;
+			}
 
-	<style>
-		body {
-			font-family: monospace;
-			font-size: 1rem;
-			line-height: 1.25;
-			margin: 0;
-		}
+			header {
+				position: fixed;
+				top: 0;
+				right: 0;
+				left: 0;
+				z-index: 10;
+				background-color: #fff;
+				box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+			}
 
-		header {
-			position: fixed;
-			top: 0;
-			right: 0;
-			left: 0;
-			z-index: 10;
-			background-color: #fff;
-			box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-		}
+			nav ul {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: center;
+				padding: 0;
+				margin: 0;
+				list-style: none outside none;
+			}
 
-		nav ul {
-			display: flex;
-			flex-flow: row nowrap;
-			align-items: center;
-			justify-content: center;
-			padding: 0;
-			margin: 0;
-			list-style: none outside none;
-		}
+			nav li {
+				padding: 0 1rem;
+			}
 
-		nav li {
-			padding: 0 1rem;
-		}
+			nav a {
+				color: black;
+				padding: 1rem 0;
+				display: block;
+			}
 
-		nav a {
-			color: black;
-			padding: 1rem 0;
-			display: block;
-		}
+			nav a:hover {
+				text-decoration: none;
+			}
 
-		nav a:hover {
-			text-decoration: none;
-		}
+			nav .current a {
+				color: red;
+			}
 
-		nav .current a {
-			color: red;
-		}
+			main {
+				padding-top: 3rem;
+			}
 
-		main {
-			padding-top: 3rem;
-		}
+			section {
+				text-align: center;
+				height: 75vh;
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				justify-content: center;
+				border-bottom: 1px solid #000;
+			}
 
-		section {
-			text-align: center;
-			height: 75vh;
-			display: flex;
-			flex-flow: row wrap;
-			align-items: center;
-			justify-content: center;
-			border-bottom: 1px solid #000;
-		}
+			footer {
+				text-align: center;
+				padding: 1rem;
+			}
+		</style>
+	</head>
 
-		footer {
-			text-align: center;
-			padding: 1rem;
-		}
-	</style>
-</head>
+	<body>
+		<header class="header">
+			<nav>
+				<ul class="nav">
+					<li><a href="#section1">Section 1</a></li>
 
-<body>
-	<header class="header">
-		<nav>
-			<ul class="nav">
-				<li><a href="#section1">Section 1</a></li>
+					<li><a href="#section2">Section 2</a></li>
 
-				<li><a href="#section2">Section 2</a></li>
+					<li><a href="#section3">Section 3</a></li>
 
-				<li><a href="#section3">Section 3</a></li>
+					<li><a href="#section4">Section 4</a></li>
+				</ul>
+			</nav>
+		</header>
 
-				<li><a href="#section4">Section 4</a></li>
-			</ul>
-		</nav>
-	</header>
+		<main>
+			<section id="section1" class="section">
+				<h1>Section 1</h1>
+			</section>
 
-	<main>
-		<section id="section1" class="section">
-			<h1>Section 1</h1>
-		</section>
+			<section id="section2" class="section">
+				<h2>Section 2</h2>
+			</section>
 
-		<section id="section2" class="section">
-			<h2>Section 2</h2>
-		</section>
+			<section id="section3" class="section">
+				<h3>Section 3</h3>
+			</section>
 
-		<section id="section3" class="section">
-			<h3>Section 3</h3>
-		</section>
+			<section id="section4" class="section">
+				<h4>Section 4</h4>
+			</section>
+		</main>
 
-		<section id="section4" class="section">
-			<h4>Section 4</h4>
-		</section>
-	</main>
+		<footer>
+			<p>&copy; 2018 Three 11 | License MIT</p>
+		</footer>
 
-	<footer>
-		<p>&copy; 2018 Three 11 | License MIT</p>
-	</footer>
+		<script src="../dist/scrollspy.min.js"></script>
 
-	<script src="../dist/scrollspy.min.js"></script>
-
-	<script>
-		new ScrollSpy({
-			linkCurrentClass: 'current',
-			linksContainerSelector: '.nav',
-			sectionSelector: '.section',
-			headerOffset: true,
-			headerClass: '.header'
-		});
-	</script>
-</body>
-
+		<script>
+			new ScrollSpy({
+				linkCurrentClass: 'current',
+				linksContainerSelector: '.nav',
+				sectionSelector: '.section',
+				headerOffset: true,
+				headerClass: '.header'
+			});
+		</script>
+	</body>
 </html>
