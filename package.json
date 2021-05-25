@@ -7,7 +7,7 @@
 		"build": "rollup -c"
 	},
 	"dependencies": {
-		"@three11/animate-top-offset": "^0.7.0"
+		"@three11/animate-top-offset": "^1.0.0"
 	},
 	"repository": {
 		"type": "git",
