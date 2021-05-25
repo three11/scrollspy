@@ -1,7 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonJS from 'rollup-plugin-commonjs';
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
 
 export default {
 	input: 'src/scrollspy.js',
@@ -20,6 +20,6 @@ export default {
 		commonJS({
 			include: 'node_modules/**'
 		}),
-		uglify()
+		terser()
 	]
 };
