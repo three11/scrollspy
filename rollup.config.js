@@ -1,25 +1,12 @@
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonJS from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
-	input: 'src/scrollspy.js',
+	input: 'src/index.ts',
 	output: {
-		file: 'dist/scrollspy.min.js',
+		dir: 'dist',
 		name: 'ScrollSpy',
 		format: 'umd'
 	},
-	plugins: [
-		babel({
-			exclude: 'node_modules/**',
-			babelrc: false,
-			presets: [['@babel/env', { modules: false }]]
-		}),
-		resolve(),
-		commonJS({
-			include: 'node_modules/**'
-		}),
-		terser()
-	]
+	plugins: [typescript(), terser()]
 };

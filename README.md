@@ -9,17 +9,15 @@
 
 # ScrollSpy
 
-A vanilla ES2017 module for scroll spy functionality.
+> Automatically update your navigation components based on scroll position to indicate which link is currently active in the viewport.
 
 ## Install
 
 ```sh
 npm i @three11/scrollspy
-```
 
-or
+# or
 
-```sh
 yarn add @three11/scrollspy
 ```
 
@@ -28,7 +26,7 @@ or
 Just download this repository and link the files located in dist folder:
 
 ```html
-<script src="path-to-scrollspy/dist/scrollspy.min.js"></script>
+<script src="path-to-scrollspy/dist/index.js"></script>
 ```
 
 or
@@ -36,7 +34,7 @@ or
 Include it from Unpkg CDN
 
 ```html
-<script src="//unpkg.com/@three11/scrollspy/dist/scrollspy.min.js"></script>
+<script src="//unpkg.com/@three11/scrollspy"></script>
 ```
 
 ## Usage
@@ -50,24 +48,79 @@ import ScrollSpy from '@three11/scrollspy';
 Then initialize a new instance of the module:
 
 ```javascript
-const scrollSpy = new ScrollSpy();
+const scrollSpy = new ScrollSpy(scrollSpySettings, scrollSpyEasings);
 ```
 
 ## Settings
 
 The default settings are:
 
+| Name                     | Type       | Description                                                          | Default                  |
+| ------------------------ | ---------- | -------------------------------------------------------------------- | ------------------------ |
+| `headerClass`            | `string`   | The class name of your Header element                                | `.c-header`              |
+| `headerOffset`           | `boolean`  | Flag which indicates if the Header height should be calculated       | `true`                   |
+| `animationSpeed`         | `number`   | Speed of the scroll animation (in milliseconds)                      | `2000`                   |
+| `animationEasing`        | `string`   | Name of the easing function. For more details see below              | `easeInOutQuint`         |
+| `sectionSelector`        | `string`   | CSS selector for your Section elements                               | `.js-scroll-spy-section` |
+| `linkCurrentClass`       | `string`   | Class name to be applied to the currently active link                | `current`                |
+| `linksContainerSelector` | `string`   | CSS selector for your scroll spy navigation                          | `.js-scroll-spy-nav`     |
+| `onAfterScroll`          | `function` | A function to run after the scroll after click on a link is complete | `() => {}`               |
+
+## Easings
+
+The `ScrollSpy` instance accepts a second optional argument which specifies a list of easing functions.
+
+The current list contains several predefined easing functions:
+
 ```javascript
-linkCurrentClass      : 'current', // The class that will be applied to the current element
-linksContainerSelector: '.js-scroll-spy-nav', // The container of the scroll spy navigation
-sectionSelector       : '.js-scroll-spy-section', // The selector for the sections that will be monitored
-headerOffset          : true, // Should calculate the header height
-headerClass           : '.c-header', // The class of the header element
+{
+    linear: t => t,
+    easeInQuad: t => t * t,
+    easeOutQuad: t => t * (2 - t),
+    easeInCubic: t => t * t * t,
+    easeOutCubic: t => --t * t * t + 1,
+    easeInQuart: t => t * t * t * t,
+    easeOutQuart: t => 1 - --t * t * t * t,
+    easeInQuint: t => t * t * t * t * t,
+    easeOutQuint: t => 1 + --t * t * t * t * t,
+    easeInOutQuad: t => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t),
+    easeInOutCubic: t => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
+    easeInOutQuart: t => (t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t),
+    easeInOutQuint: t => (t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t),
+}
+```
+
+If you wish to add your own easing function, you can do so by adding it to the second argument of the `ScrollSpy` constructor.
+
+Just remember that your custom easing function should accept a single `time` argument which is a `number` and should return a `number`.
+
+In order to use your custom easing function, you need to specify its name in the `animationEasing` setting.
+
+## Example
+
+```javascript
+new ScrollSpy(
+	{
+		linkCurrentClass: 'current',
+		linksContainerSelector: '.nav',
+		sectionSelector: '.section',
+		headerOffset: true,
+		headerClass: '.header',
+		animationSpeed: 3000,
+		animationEasing: 'customEasingFunction',
+		onAfterScroll: () => {
+			console.log('scroll ended');
+		}
+	},
+	{
+		customEasingFunction: t => t ** t
+	}
+);
 ```
 
 ## Demo
 
-A minimal demo is available [here](https://github.com/three11/scrollspy/blob/master/demo/index.html)
+A minimal demo is available [here](https://three11-scrollspy.netlify.app)
 
 ## License
 
