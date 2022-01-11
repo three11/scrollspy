@@ -110,9 +110,6 @@ export default class ScrollSpy {
 
 		this.init();
 
-		win.addEventListener('load', this.refreshPositions.bind(this));
-		win.addEventListener('resize', this.refreshPositions.bind(this));
-
 		return this;
 	}
 
@@ -121,7 +118,7 @@ export default class ScrollSpy {
 		this.setSectionData();
 		this.setCurrentIndex();
 		this.setCurrentState();
-		this.bindEvents();
+		this.bind();
 	}
 
 	private setProperties(): void {
@@ -154,11 +151,11 @@ export default class ScrollSpy {
 		});
 	}
 
-	private refreshPositions(): void {
+	private refreshPositions = (): void => {
 		this.data.offsets = this.data.offsets.map((_: number, index: number) =>
 			this.getSectionOffset(this.sections[index])
 		);
-	}
+	};
 
 	private getSectionOffset(section: HTMLElement | null): number {
 		if (!section) {
@@ -174,7 +171,7 @@ export default class ScrollSpy {
 		return section.offsetTop - header.offsetHeight;
 	}
 
-	private setCurrentIndex(): void {
+	private setCurrentIndex = (): void => {
 		const scrollTop = win.pageYOffset;
 
 		this.data.offsets.forEach((offset, index) => {
@@ -189,7 +186,7 @@ export default class ScrollSpy {
 		});
 
 		this.setCurrentState();
-	}
+	};
 
 	private setCurrentState(): void {
 		const linstContainer = document.querySelector(this.linksContainerSelector);
@@ -204,7 +201,7 @@ export default class ScrollSpy {
 		}
 	}
 
-	private bindEvents() {
+	public bind(): void {
 		this.links.forEach((link: HTMLElement | null, index: number) => {
 			link?.addEventListener('click', (event: Event) => {
 				event.preventDefault();
@@ -220,9 +217,15 @@ export default class ScrollSpy {
 			});
 		});
 
-		win.addEventListener('scroll', () => {
-			this.setCurrentIndex();
-		});
+		win.addEventListener('load', this.refreshPositions);
+		win.addEventListener('resize', this.refreshPositions);
+		win.addEventListener('scroll', this.setCurrentIndex);
+	}
+
+	public unbind(): void {
+		win.removeEventListener('load', this.refreshPositions);
+		win.removeEventListener('resize', this.refreshPositions);
+		win.removeEventListener('scroll', this.setCurrentIndex);
 	}
 }
 // codebeat:enable[ABC,LOC]

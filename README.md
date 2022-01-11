@@ -96,6 +96,26 @@ Just remember that your custom easing function should accept a single `time` arg
 
 In order to use your custom easing function, you need to specify its name in the `animationEasing` setting.
 
+## API
+
+There are two public methods of the `ScrollSpy` instance.
+
+The `unbind` method unbinds (removes) all of the event listeners and the `bind` method binds (adds) all of the event listeners.
+
+These methods are useful in various cases - for example if you load the content of your pages with AJAX and you want to remove all possible memory leaks after you remove the ScrollSpy markup/HTML.
+
+Here is how you can use them:
+
+```javascript
+const scrollSpy = new ScrollSpy(scrollSpySettings, scrollSpyEasings);
+
+// Later in your code
+scrollSpy.unbind();
+
+// Then, if you wish to re-enable the ScrollSpy functionality
+scrollSpy.bind();
+```
+
 ## Example
 
 ```javascript

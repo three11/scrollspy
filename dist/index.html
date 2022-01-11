@@ -113,7 +113,7 @@
 		<script src="./index.js"></script>
 
 		<script>
-			new ScrollSpy({
+			const instance = new ScrollSpy({
 				linkCurrentClass: 'current',
 				linksContainerSelector: '.nav',
 				sectionSelector: '.section',
@@ -125,6 +125,14 @@
 					console.log('scroll ended');
 				}
 			});
+
+			// Remove all event listeners after 20 seconds.
+			// This is just for demo purposes
+			// This stops the ScrollSpy functionality.
+
+			// setTimeout(() => {
+			// 	instance.unbind();
+			// }, 20000);
 		</script>
 	</body>
 </html>

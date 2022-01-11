@@ -38,5 +38,6 @@ export default class ScrollSpy {
     private getSectionOffset;
     private setCurrentIndex;
     private setCurrentState;
-    private bindEvents;
+    bind(): void;
+    unbind(): void;
 }
