@@ -1,23 +1,22 @@
 {
 	"name": "@three11/scrollspy",
-	"version": "1.0.0",
-	"description": "Vanilla ES2017 module for scroll spy",
-	"main": "dist/scrollspy.min.js",
+	"version": "2.0.0",
+	"description": "Automatically update your navigation components based on scroll position to indicate which link is currently active in the viewport",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"typings": "dist/index.d.ts",
 	"scripts": {
-		"build": "rollup -c"
-	},
-	"dependencies": {
-		"@three11/animate-top-offset": "^1.0.0"
+		"build": "rollup -c",
+		"start": "rollup -c -w"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/three11/scrollspy.git"
 	},
 	"keywords": [
-		"Spy",
-		"Scroll",
-		"JS",
-		"ES2017"
+		"ScrollSpy",
+		"Navigation",
+		"Animated scroll"
 	],
 	"authors": [
 		{
@@ -41,14 +40,12 @@
 		"url": "https://github.com/three11/scrollspy/issues"
 	},
 	"homepage": "https://github.com/three11/scrollspy#readme",
+	"dependencies": {},
 	"devDependencies": {
-		"@babel/cli": "7.16.8",
-		"@babel/core": "7.16.7",
-		"@babel/preset-env": "7.16.8",
+		"@rollup/plugin-typescript": "8.3.0",
 		"rollup": "2.63.0",
-		"rollup-plugin-babel": "4.4.0",
-		"rollup-plugin-commonjs": "10.1.0",
-		"rollup-plugin-node-resolve": "5.2.0",
-		"rollup-plugin-terser": "7.0.2"
+		"rollup-plugin-terser": "7.0.2",
+		"tslib": "2.3.1",
+		"typescript": "4.5.4"
 	}
 }

@@ -110,16 +110,29 @@
 			<p>&copy; 2018 Three 11 | License MIT</p>
 		</footer>
 
-		<script src="../dist/scrollspy.min.js"></script>
+		<script src="./index.js"></script>
 
 		<script>
-			new ScrollSpy({
+			const instance = new ScrollSpy({
 				linkCurrentClass: 'current',
 				linksContainerSelector: '.nav',
 				sectionSelector: '.section',
 				headerOffset: true,
-				headerClass: '.header'
+				headerClass: '.header',
+				animationSpeed: 300,
+				animationEasing: 'easeInCubic',
+				onAfterScroll: () => {
+					console.log('scroll ended');
+				}
 			});
+
+			// Remove all event listeners after 20 seconds.
+			// This is just for demo purposes
+			// This stops the ScrollSpy functionality.
+
+			// setTimeout(() => {
+			// 	instance.unbind();
+			// }, 20000);
 		</script>
 	</body>
 </html>
