@@ -38,6 +38,8 @@ yarn.lock
 .babelrc
 .github
 .whitesource
+_config.yml
 renovate.json
 rollup.config.js
 webpack.config.js
+tsconfig.json
